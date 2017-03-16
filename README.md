@@ -1,4 +1,4 @@
-## containers to build pairport-sync
+## containers to build shairport-sync
 
 
 ### copy installed files
