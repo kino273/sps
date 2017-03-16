@@ -1,4 +1,4 @@
-FROM kino/rpi
+FROM kino/conts:raspi
 ENV VVV=/usr/local/docker/shairport-sync
 
 RUN (apt-get install -y g++ autoconf automake libtool libdaemon-dev libasound2-dev libpopt-dev libconfig-dev \
