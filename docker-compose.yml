@@ -1,18 +1,5 @@
-sps:
-  image: kino/sps
-  hostname: dev.localdomain
-  privileged: true
-  dns:
-    - 8.8.8.8
-  dns_search:
-    - localdomain
-  ports:
-    - "127.0.0.1:4222:22"
-  volumes:
-    - /usr/local/docker:/usr/local/docker-host
-
 spscopy:
-  image: kino/sps
+  image: kino/sps:raspi
   hostname: devcopy.localdomain
   volumes:
     - /usr/local/docker:/usr/local/docker-host
