@@ -6,10 +6,10 @@ script:
 # prepare qemu
 - docker run --rm --privileged multiarch/qemu-user-static:register --reset
 # build image
-- docker build -t kino/sps .
+- docker build -t kino/sps:raspi .
 # push image
 - >
   if [ "$TRAVIS_BRANCH" == "raspi" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
-    docker push kino/sps
+    docker push kino/sps:raspi
   fi
