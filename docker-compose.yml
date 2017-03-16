@@ -1,4 +1,4 @@
-dev:
+sps:
   image: kino/sps
   hostname: dev.localdomain
   privileged: true
@@ -11,14 +11,9 @@ dev:
   volumes:
     - /usr/local/docker:/usr/local/docker-host
 
-devcopy:
+spscopy:
   image: kino/sps
   hostname: devcopy.localdomain
   volumes:
     - /usr/local/docker:/usr/local/docker-host
   command: /usr/local/copy.sh
-
-shairplay-sync:
-  extends:
-    service: devcopy
-  image: kino/sps
