@@ -7,10 +7,11 @@ RUN (apt-get install -y g++ autoconf automake libtool libdaemon-dev libasound2-d
 RUN (git clone https://github.com/mikebrady/shairport-sync.git; \
      cd shairport-sync; \
      autoreconf -i -f; \
-     mkdir -p /usr/local/docker/shairport-sync; \
+     mkdir -p ${VVV}/src; \
      ./configure --with-alsa --with-avahi --with-ssl=openssl --with-metadata --with-systemd; \
      getent group shairport-sync &>/dev/null || sudo groupadd -r shairport-sync >/dev/null; \
      getent passwd shairport-sync &> /dev/null || sudo useradd -r -M -g shairport-sync -s /usr/bin/nologin -G audio shairport-sync >/dev/null; \
+     cp -R . ${VVV}/src/; \
      make install DESTDIR=${VVV})
 
 EXPOSE 22
